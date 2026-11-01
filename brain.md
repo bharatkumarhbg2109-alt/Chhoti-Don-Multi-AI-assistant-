@@ -1,6 +1,7 @@
 # 🧠 Chhoti Don — Brain.md
 
-> Living codebase memory. Last updated: 2026-08-25. Branch: `desktop-integration`. HEAD: `bf5ccba`.
+> Living codebase memory. Last updated: 2026-11-01. Branch: `main`. HEAD: `f202d54`.
+> 2026-11-01: Published to GitHub (`main`). Trunk now includes the coding agent (P1–P6), semantic memory, Hands Layer wiring, and a test suite of 486 test functions across 27 files.
 > Update this file every time a feature is added, changed, or removed.
 
 ---

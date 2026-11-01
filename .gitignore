@@ -47,3 +47,8 @@ browser/.userdata/
 browser/.userdata/**
 **/.userdata/
 .archify/
+
+# ── Temp / integration scratch (never commit) ───────────────
+.integration-temp/
+.codex-temp/
+behavior_memory.json
