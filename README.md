@@ -310,26 +310,61 @@ Live Ollama tests skip automatically when no Ollama daemon is running (see `test
 
 ## Project structure
 
-```
-app.py                  # Flask web API — main HTTP entry point (:8000)
-main.py                 # CLI entry point (10 interactive modes)
-core/                   # Brain, routing, memory, safety, config
-chhoti_agents/          # Analyst, coder, security agents
-coding_agent/           # Coding agent (sandbox, shell, tools, server)
-browser/                # Browser automation (guarded + HITL)
-hands/                  # Tool hands layer
-tools/                  # Calculator, code tools, registry, sandbox
-cyber_engine/           # Defensive security analysis engine
-voice/                  # Local STT/TTS voice assistant
-knowledge_pipeline/     # RAG pipeline (fetch, process, retrieve)
-chhoti-don-react/       # React dashboard (Vite + Tailwind)
-desktop/                # Electron desktop shell
-docs/                   # Screenshots (dashboard.png)
-tests/                  # Pytest suite
-brain.md                # Living codebase memory / architecture notes
-```
+```mermaid
+flowchart LR
+    ROOT(["Chhoti-Don-Multi-AI-assistant-"])
 
----
+    subgraph ENTRY["Entry points"]
+        APP["app.py<br/>Flask web API :8000"]
+        MAIN["main.py<br/>CLI, 10 modes"]
+    end
+
+    subgraph BRAINL["Brain"]
+        CORE["core/<br/>brain, routing, memory,<br/>safety, config"]
+    end
+
+    subgraph AGENTL["Agents"]
+        AGS["chhoti_agents/<br/>analyst, coder, security"]
+        CODE["coding_agent/<br/>sandbox, shell, tools, server"]
+        CYB["cyber_engine/<br/>defensive security analysis"]
+    end
+
+    subgraph ACT["Action layer"]
+        HND["hands/<br/>tool hands"]
+        TLS["tools/<br/>calculator, code tools,<br/>registry, sandbox"]
+        BRW["browser/<br/>guarded browser + HITL"]
+    end
+
+    subgraph DATAL["Voice and knowledge"]
+        VOI["voice/<br/>local STT and TTS"]
+        KNO["knowledge_pipeline/<br/>RAG: fetch, process, retrieve"]
+    end
+
+    subgraph UIL["Interfaces"]
+        REA["chhoti-don-react/<br/>React dashboard, Vite + Tailwind"]
+        DSK["desktop/<br/>Electron shell"]
+    end
+
+    subgraph SUP["Support"]
+        TST["tests/<br/>pytest suite"]
+        DOC["docs/<br/>screenshots"]
+        BMD["brain.md<br/>architecture notes"]
+    end
+
+    ROOT --> ENTRY
+    ROOT --> BRAINL
+    ROOT --> AGENTL
+    ROOT --> ACT
+    ROOT --> DATAL
+    ROOT --> UIL
+    ROOT --> SUP
+
+    style ROOT fill:#fef3c7,stroke:#d97706
+    style CORE fill:#dbeafe,stroke:#3b82f6
+    style CYB fill:#ede9fe,stroke:#7c3aed
+    style BRW fill:#fee2e2,stroke:#dc2626
+    style KNO fill:#dcfce7,stroke:#16a34a
+```
 
 ## License
 
